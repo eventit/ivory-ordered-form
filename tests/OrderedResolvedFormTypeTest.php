@@ -14,6 +14,7 @@ namespace Ivory\Tests\OrderedForm;
 use Ivory\OrderedForm\Builder\OrderedFormBuilder;
 use Ivory\OrderedForm\OrderedResolvedFormType;
 use Ivory\OrderedForm\Orderer\FormOrderer;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
@@ -23,7 +24,7 @@ use Symfony\Component\Form\FormFactoryInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class OrderedResolvedFormTypeTest extends AbstractTestCase
+class OrderedResolvedFormTypeTest extends TestCase
 {
     /**
      * @var EventDispatcherInterface
@@ -43,7 +44,7 @@ class OrderedResolvedFormTypeTest extends AbstractTestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->dispatcher = $this->createMock(EventDispatcherInterface::class);
         $this->factory = $this->createMock(FormFactoryInterface::class);

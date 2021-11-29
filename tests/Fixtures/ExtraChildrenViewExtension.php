@@ -48,8 +48,8 @@ class ExtraChildrenViewExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes(): iterable
     {
-        return method_exists(AbstractType::class, 'getBlockPrefix') ? FormType::class : 'form';
+        return method_exists(AbstractType::class, 'getBlockPrefix') ? [FormType::class] : ['form'];
     }
 }
